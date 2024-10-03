@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <h1>Check for email validation.</h1>
+      <form id="form">
+      <div class="email_checking">Enter email: <input type="text" id="email" class="a"></div><br>
+      <div class="result"></div>
+      <button class="b">Check for validation</button>
+</form>
+      
+</body>
+<script>
+      // const password_validation = document.querySelector(".password_checking")
+
+      const f= document.querySelector("#form")
+
+      f.addEventListener('submit', function(e){
+            e.preventDefault();
+
+
+            const email_h= document.querySelector("#email").value
+
+            const email_pattern =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            const final_result = document.querySelector(".result")
+
+
+            if(!email_pattern.test(email_h)){
+                  // final_result.innerHTML="Please give the right syntax."
+
+                  alert("Wrong syntax.")
+            }
+
+            else{
+                  final_result.innerHTML="Correct and the corresponding email is : "+email_h
+                  final_result.style.backgroundcolor=green;
+
+            }
+
+
+
+      })
+      // const email= document.querySelector("#email").value
+
+      // const email_pattern =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+      C:\Users\HP\Desktop\image\emailvalidation.html
+
+
+</script>
+
+</html>
