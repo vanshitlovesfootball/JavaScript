@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <style>
+
+            html{
+                  height: 100%;
+                  width: 100%;
+            }
+            #h{
+                       color: black;
+                       margin-left: 100px;
+                       font-weight: 900;
+      
+            }
+      
+      
+            .d1{
+                  font-weight: 900;
+                  margin-left: 100px;
+                  margin-top: 50px;
+            }
+      
+      
+      .d2{
+            font-weight: 900;
+            margin-left: 100px;
+            margin-top: 30px;
+      }
+      
+      .button{
+            background-color: white;
+            height: 25px;
+            width: 100px;
+            margin-left: 200px;
+            margin-top: 40px;
+            font-weight: 900;
+            padding-left: 20px;
+            /* padding-top: ; */
+            border-radius: 10px;
+      
+      }
+      
+      .h3{
+            margin-left: 200px;
+            margin-top: 40px;
+      
+      
+      
+      
+      
+      
+      }
+      
+      
+      .head1{
+            margin-left: 200px;
+      }
+      
+      
+      .head2{
+            margin-left: 200px;
+      }
+      
+      
+      
+      .head3{
+            margin-left: 200px;
+      }
+      </style>
+      <body style="background-color: rgba(128, 128, 128, 1);">
+      
+            
+      
+            <h1 id="h">BMI Calculator</h1>
+            
+      
+            <div class="d1">Height in CM: <input type="text" id="height" class="A"><span id="err1"></span></div>
+            <div class="d2">Weight in KG: <input type="text" id="weight" class="B"><span id="err2"></span></div>
+
+               
+          <button class="button" onclick="getBMI()">Calculate</button>
+            <!-- <div class="result"></div> -->
+   
+      
+      
+            <h3 class="h3">BMI Weight Guide</h3>
+      
+            <h5 class="head1">Under Weight = Less than 18.6</h5>
+            <h5 class="head2">Normal Range = 18.6 and 24.9</h5>
+            <h5 class="head3">OverWeight= Greater than 24.9</h5>
+      
+      
+      
+
+      <h1 id="ww"></h1>
+
+      <h1 id="hh"></h1>
+      <h1 id="we"></h1>
+      <h1 id="ws"></h1>
+
+      <script>
+
+// C:\Users\HP\Desktop\image\generator.html
+
+
+function getBMI(){
+
+
+
+
+
+            let height=Number(document.getElementById("height").value)
+
+            let weight=Number(document.getElementById("weight").value)
+
+            const bmi= (weight/ ((height*height)/10000).toFixed(2))
+
+
+
+            var e1=e2=0;
+
+
+
+            if(height===" " || height<0 || isNaN(height)){
+                  e1=1
+                  document.getElementById("err1").innerHTML= `U entered ${height} this is not  a valid height`
+            }
+
+            else{
+                  e1=0
+                  document.getElementById("err1").innerHTML=""
+            }
+
+            if(weight===" " || weight<0 || isNaN(weight)){
+                  e2=1
+                  document.getElementById("err2").innerHTML= `U entered ${weight} this is not a valid weight`
+            }
+
+            else{
+                  e2=0
+                  document.getElementById("err2").innerHTML=""
+            }
+
+
+            if(e1==0 && e2==0){
+            document.getElementById("ww").innerHTML="The BMI is "+bmi
+            }
+
+
+
+            if(bmi<18){
+                  document.getElementById("hh").innerText="Underweight"
+            }     
+
+            else if(bmi>24){
+                  document.getElementById("hh").innerText="Overweight"
+            }
+
+            else{
+                  document.getElementById("hh").innerText="Normal"
+            }
+
+
+
+
+
+
+
+
+}
+
+
+
+  </script>
+      
+</body>
+</html>
